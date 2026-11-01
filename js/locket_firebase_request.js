@@ -4,15 +4,21 @@
  * By Xwuan
  */
 
-var modifiedHeaders = $request.headers || {};
-
-// Xóa header If-None-Match, If-Modified-Since hoặc X-Firebase-ETag để ngăn chặn server trả về 304 Not Modified
-for (var key in modifiedHeaders) {
+function setHeaderValue(headers, key, val) {
   var lower = key.toLowerCase();
-  if (lower === "if-none-match" || lower === "x-firebase-etag" || lower === "if-modified-since") {
-    delete modifiedHeaders[key];
+  for (var k in headers) {
+    if (k.toLowerCase() === lower) {
+      headers[k] = val;
+      return;
+    }
   }
+  headers[key] = val;
 }
+
+var modifiedHeaders = $request.headers || {};
+setHeaderValue(modifiedHeaders, "X-Firebase-ETag", "");
+setHeaderValue(modifiedHeaders, "If-None-Match", "");
+setHeaderValue(modifiedHeaders, "If-Modified-Since", "");
 
 // Xử lý thông minh: bảo toàn device ID, token và account thật của người dùng
 var reqBody = {};
