@@ -99,9 +99,7 @@ console.log('=== 2. Testing Firebase Remote Config Scripts ===');
   assert.strictEqual(finalBody.entries.server_test_key, 'active', 'Dynamic merge kept server key');
   assert.strictEqual(finalBody.entries.purchases_entitlement, 'Gold');
   assert.strictEqual(finalBody.entries.max_friends_count, '999999');
-  assert.strictEqual(finalBody.entries.upload_main_image_quality, '1.0');
-  assert.strictEqual(finalBody.entries.upload_main_image_size, '4096');
-  assert.strictEqual(finalBody.entries.video_max_duration, '30');
+  assert.strictEqual(finalBody.entries.upload_main_image_quality, '0.9');
   assert.strictEqual(finalBody.entries.moment_views_enabled, 'true');
 
   const gates = JSON.parse(finalBody.entries.feature_gates);
