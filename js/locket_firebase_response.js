@@ -56,6 +56,8 @@ var customConfig = {
     android_widget_frame_event_enabled: "true",
     app_check_enabled: "true",
     appsflyer_sharing_filter_partners: "[]",
+    audio_enabled: "true",
+    audio_playback_enabled: "true",
     auth_config:
       '{"auth_button_config":"bifurcated","show_apple_sign_in_backwards_compatibility":false,"create_account_auth_type_config":"email","sign_in_auth_type_config":"email_primary_phone_secondary","prompt_for_email_after_phone_sign_in":true,"allow_skip_email_after_phone_sign_in":false,"unlink_phone_number_setting":false,"use_password_for_phone_auth":true,"prompt_email_existing_user_interval":10,"allow_skip_email_existing_user":false,"send_email_verif_sign_up":true,"send_email_verif_existing_user":true,"prompt_username_sign_up":true,"prompt_username_sign_in":true,"username_section_on_profile":true,"username_search":true,"username_discoverability_setting":true,"prompt_username_existing_user_interval":604800}',
     beta_features_enabled: "true",
@@ -100,7 +102,7 @@ var customConfig = {
     feature_discovery_popup_config:
       '{"tag":"NEW FEATURE","tag_gradient":true,"title":"Chat Reactions","feature_set":[{"title":"React to chat messages \ud83d\udc4d","body":"Hold down on the message to add a reaction or unsend the message!","imageURL":"https://public.locketcamera.com/locket-public/feature_popup_graphics/chat-reactions.heic"}],"campaign":"locket_chat_reactions","start_at":"2025-08-05T00:00:00","end_at":"2025-08-12T23:59:59","use_local_time_zone":true}',
     feature_gates:
-      '{"app_icon_picker":"enabled","camera_roll":"enabled","camera_theme":"enabled","locket_views":"enabled","long_captions":"enabled","longer_video":"enabled","unlimited_friends":"enabled","priority_support":"enabled","profile_badge":"enabled","remove_ads":"enabled","video":"enabled","custom_widget_frames":"enabled","streak_recovery":"enabled"}',
+      '{"app_icon_picker":"enabled","audio":"enabled","audio_playback":"enabled","camera_roll":"enabled","camera_theme":"enabled","custom_widget_frames":"enabled","locket_views":"enabled","long_captions":"enabled","longer_video":"enabled","priority_support":"enabled","profile_badge":"enabled","remove_ads":"enabled","streak_recovery":"enabled","unlimited_friends":"enabled","video":"enabled","video_audio":"enabled"}',
     fetch_moments_in_conversation: "true",
     fetch_users_from_cloud_function: "true",
     firestore_amplitude_logging: "0",
@@ -388,7 +390,11 @@ var customConfig = {
     user_cache_max_age_sec: "691200",
     user_data_export_enabled: "true",
     v2_refresh: "true",
+    video_audio_enabled: "true",
     video_contest_config: "null",
+    video_duration_seconds: "30",
+    video_max_duration: "30",
+    longer_video_duration: "30",
     video_upload_cache_control: "public, max-age=604800",
     widget_auth_fix: "true",
     widget_auth_fix_2: "true",

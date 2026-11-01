@@ -104,8 +104,11 @@ console.log('=== 2. Testing Firebase Remote Config Scripts ===');
 
   const gates = JSON.parse(finalBody.entries.feature_gates);
   assert.strictEqual(gates.longer_video, 'enabled');
+  assert.strictEqual(gates.video_audio, 'enabled');
   assert.strictEqual(gates.camera_roll, 'enabled');
   assert.strictEqual(gates.remove_ads, 'enabled');
+  assert.strictEqual(finalBody.entries.video_max_duration, '30');
+  assert.strictEqual(finalBody.entries.video_audio_enabled, 'true');
 
   // Verify all JSON strings inside entries
   for (const [k, v] of Object.entries(finalBody.entries)) {
