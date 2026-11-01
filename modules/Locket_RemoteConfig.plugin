@@ -1,0 +1,12 @@
+#!name = Locket-XVIP Remote Config
+#!desc = Kích hoạt Full Locket Gold, Ultra HD 4K, vô hạn bạn bè, mở khóa tất cả tính năng VIP, khôi phục streak & chặn quảng cáo.
+#!author = Xwuan
+#!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Locket.png
+
+[Script]
+http-request ^https:\/\/firebaseremoteconfig\.googleapis\.com\/v1\/projects\/locket-4252a\/namespaces\/firebase:fetch script-path=https://raw.githubusercontent.com/Xwuan19/Locket-XVIP/main/js/locket_firebase_request.js, requires-body=true, timeout=60, tag=Locket_Request_VIP
+
+http-response ^https:\/\/firebaseremoteconfig\.googleapis\.com\/v1\/projects\/locket-4252a\/namespaces\/firebase:fetch script-path=https://raw.githubusercontent.com/Xwuan19/Locket-XVIP/main/js/locket_firebase_response.js, requires-body=true, timeout=60, tag=Locket_Response_VIP
+
+[Mitm]
+hostname = firebaseremoteconfig.googleapis.com

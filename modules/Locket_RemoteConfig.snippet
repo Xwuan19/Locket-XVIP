@@ -1,0 +1,10 @@
+# Locket-XVIP for Quantumult X
+# Kích hoạt Full Locket Gold, Ultra HD 4K, vô hạn bạn bè, mở khóa tất cả tính năng VIP & chặn quảng cáo.
+# By Xwuan
+
+[rewrite_local]
+^https:\/\/firebaseremoteconfig\.googleapis\.com\/v1\/projects\/locket-4252a\/namespaces\/firebase:fetch url script-request-body https://raw.githubusercontent.com/Xwuan19/Locket-XVIP/main/js/locket_firebase_request.js
+^https:\/\/firebaseremoteconfig\.googleapis\.com\/v1\/projects\/locket-4252a\/namespaces\/firebase:fetch url script-response-body https://raw.githubusercontent.com/Xwuan19/Locket-XVIP/main/js/locket_firebase_response.js
+
+[mitm]
+hostname = firebaseremoteconfig.googleapis.com

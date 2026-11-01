@@ -1,0 +1,13 @@
+#!name=Locket-XVIP Remote Config
+#!desc=Kích hoạt Full Locket Gold, Ultra HD 4K, vô hạn bạn bè, mở khóa tất cả tính năng VIP, khôi phục streak & chặn quảng cáo.
+#!category=Xwuan VIP
+#!system=ios
+
+[Script]
+# Locket Firebase Remote Config Override (Super VIP Pro Max) - By Xwuan
+locket_firebase_request = type=http-request, pattern=^https:\/\/firebaseremoteconfig\.googleapis\.com\/v1\/projects\/locket-4252a\/namespaces\/firebase:fetch, script-path=https://raw.githubusercontent.com/Xwuan19/Locket-XVIP/main/js/locket_firebase_request.js, requires-body=true, max-size=-1, timeout=60
+
+locket_firebase_response = type=http-response, pattern=^https:\/\/firebaseremoteconfig\.googleapis\.com\/v1\/projects\/locket-4252a\/namespaces\/firebase:fetch, script-path=https://raw.githubusercontent.com/Xwuan19/Locket-XVIP/main/js/locket_firebase_response.js, requires-body=true, max-size=-1, timeout=60
+
+[MITM]
+hostname = %APPEND% firebaseremoteconfig.googleapis.com
