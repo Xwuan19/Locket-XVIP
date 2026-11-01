@@ -4,13 +4,20 @@
  * By Xwuan
  */
 
-var modifiedHeaders = $request.headers || {};
-
-for (var key in modifiedHeaders) {
+function setHeaderValue(headers, key, val) {
   var lower = key.toLowerCase();
-  if (lower === "x-revenuecat-etag" || lower === "if-none-match" || lower === "if-modified-since") {
-    delete modifiedHeaders[key];
+  for (var k in headers) {
+    if (k.toLowerCase() === lower) {
+      headers[k] = val;
+      return;
+    }
   }
+  headers[key] = val;
 }
+
+var modifiedHeaders = $request.headers || {};
+setHeaderValue(modifiedHeaders, "X-RevenueCat-ETag", "");
+setHeaderValue(modifiedHeaders, "If-None-Match", "");
+setHeaderValue(modifiedHeaders, "If-Modified-Since", "");
 
 $done({ headers: modifiedHeaders });

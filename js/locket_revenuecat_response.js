@@ -5,12 +5,10 @@
  */
 
 var obj = {};
-if (typeof $response !== "undefined" && $response.body) {
-  try {
-    obj = typeof $response.body === "string" ? JSON.parse($response.body) : $response.body;
-  } catch (e) {
-    obj = {};
-  }
+try {
+  obj = typeof $response.body === "string" ? JSON.parse($response.body) : ($response.body || {});
+} catch (e) {
+  obj = {};
 }
 
 obj.subscriber = obj.subscriber || {};
@@ -42,9 +40,8 @@ var goldEntitlement = {
 
 obj.subscriber.subscriptions["com.locket02.premium.yearly"] = goldSubscription;
 obj.subscriber.subscriptions["locket_1600_1y"] = goldSubscription;
+obj.subscriber.subscriptions["locket_199_1m"] = goldSubscription;
 obj.subscriber.entitlements["Gold"] = goldEntitlement;
-obj.subscriber.entitlements["gold"] = goldEntitlement;
-obj.subscriber.entitlements["pro"] = goldEntitlement;
 
 obj.Attention = "Locket-XVIP Activated by Xwuan!";
 

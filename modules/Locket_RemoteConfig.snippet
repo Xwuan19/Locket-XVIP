@@ -1,14 +1,14 @@
 # Locket-XVIP (Super VIP Pro Max) for Quantumult X
-# Kích hoạt Locket Gold trọn đời (RevenueCat) + 4K Ultra HD + 30s Video + Vô hạn bạn bè + Ai đã xem + Khôi phục Streak + Chặn QC (Firebase). By Xwuan
+# By Xwuan
+
+[rewrite_remote]
 
 [rewrite_local]
-# RevenueCat
-^https:\/\/api\.revenuecat\.com\/.*\/(receipts|subscribers) url script-request-header https://raw.githubusercontent.com/Xwuan19/Locket-XVIP/main/js/locket_revenuecat_request.js
 ^https:\/\/api\.revenuecat\.com\/.*\/(receipts$|subscribers\/[^/]+$) url script-response-body https://raw.githubusercontent.com/Xwuan19/Locket-XVIP/main/js/locket_revenuecat_response.js
+^https:\/\/api\.revenuecat\.com\/.*\/(receipts|subscribers) url script-request-header https://raw.githubusercontent.com/Xwuan19/Locket-XVIP/main/js/locket_revenuecat_request.js
 
-# Firebase
-^https:\/\/firebaseremoteconfig\.googleapis\.com\/v1\/projects\/locket-4252a\/namespaces\/firebase:fetch url script-request-body https://raw.githubusercontent.com/Xwuan19/Locket-XVIP/main/js/locket_firebase_request.js
-^https:\/\/firebaseremoteconfig\.googleapis\.com\/v1\/projects\/locket-4252a\/namespaces\/firebase:fetch url script-response-body https://raw.githubusercontent.com/Xwuan19/Locket-XVIP/main/js/locket_firebase_response.js
+^https:\/\/firebaseremoteconfig\.googleapis\.com\/v1\/projects\/.*\/namespaces\/firebase:fetch url script-response-body https://raw.githubusercontent.com/Xwuan19/Locket-XVIP/main/js/locket_firebase_response.js
+^https:\/\/firebaseremoteconfig\.googleapis\.com\/v1\/projects\/.*\/namespaces\/firebase:fetch url script-request-body https://raw.githubusercontent.com/Xwuan19/Locket-XVIP/main/js/locket_firebase_request.js
 
 [mitm]
-hostname = api.revenuecat.com, firebaseremoteconfig.googleapis.com
+hostname = api.revenuecat.com, firebaseremoteconfig.googleapis.com, raw.githubusercontent.com

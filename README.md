@@ -11,13 +11,21 @@ Tích hợp hoàn hảo **2 trong 1**:
 ## 📲 Hướng Dẫn Cài Đặt Cho Từng App
 
 ### 1. Shadowrocket (Khuyên dùng)
-- Mở **Shadowrocket** > mục **Cấu hình (Configuration)** > tab **Mô-đun (Modules)** > bấm dấu `+`.
-- Nhập URL sau và lưu lại:
+Bạn có 2 lựa chọn module tùy theo nhu cầu:
+
+#### Lựa chọn A: Bản Super VIP Pro Max (Gold + 30s Video + 4K + Vô Hạn Bạn Bè)
+- Dán URL sau vào mục **Mô-đun (Modules)** trong Shadowrocket:
 ```text
 https://raw.githubusercontent.com/Xwuan19/Locket-XVIP/main/modules/Locket_XVIP.module
 ```
-- Bật module lên.
-- Đảm bảo trong Shadowrocket đã bật **Giải mã HTTPS (HTTPS Decryption / MitM)** và đã cài + tin cậy Chứng chỉ CA.
+
+#### Lựa chọn B: Bản Gold Thuần Siêu Ổn Định (Pure Gold)
+- Nhẹ nhàng, ổn định 100%, chuyên mở khóa Locket Gold qua RevenueCat:
+```text
+https://raw.githubusercontent.com/Xwuan19/Locket-XVIP/main/modules/Locket_Gold.module
+```
+> [!IMPORTANT]
+> Cần đảm bảo Shadowrocket đã bật **Giải mã HTTPS (HTTPS Decryption / MitM)** và đã **Tin cậy chứng nhận đầy đủ** trong `Cài đặt > Cài đặt chung > Giới thiệu > Cài đặt tin cậy chứng nhận`.
 
 ### 2. Surge
 - Mở **Surge** > tab **Modules** > **Install New Module**.

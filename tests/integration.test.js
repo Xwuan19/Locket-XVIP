@@ -19,8 +19,8 @@ console.log('=== 1. Testing RevenueCat Scripts ===');
   run(mockReq, (res) => { doneResult = res; });
 
   assert(doneResult, 'RevenueCat request $done was not called');
-  assert(!doneResult.headers['X-RevenueCat-ETag'], 'X-RevenueCat-ETag not removed');
-  assert(!doneResult.headers['If-None-Match'], 'If-None-Match not removed');
+  assert.strictEqual(doneResult.headers['X-RevenueCat-ETag'], '', 'X-RevenueCat-ETag not blanked');
+  assert.strictEqual(doneResult.headers['If-None-Match'], '', 'If-None-Match not blanked');
   assert.strictEqual(doneResult.headers['User-Agent'], mockReq.headers['User-Agent']);
   console.log('✓ RevenueCat Request ETag stripping: PASS');
 }
